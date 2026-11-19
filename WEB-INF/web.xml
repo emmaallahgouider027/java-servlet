@@ -6,8 +6,92 @@
 
     <display-name>LAB1</display-name>
 
+    <filter>
+    <filter-name>LoggingFilter</filter-name>
+    <filter-class>ex1.LoggingFilter</filter-class>
+
+    <init-param>
+        <param-name>logPrefix</param-name>
+        <param-value>[LOG]</param-value>
+    </init-param>
+</filter>
+
+<filter-mapping>
+    <filter-name>LoggingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+    <!-- Servlet 1 : firstservlet -->
+    <servlet>
+        <servlet-name>FormServlet</servlet-name>
+        <servlet-class>ex1.FormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/FormServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/Form_Servlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet 2 : ReadCookie -->
+    <servlet>
+        <servlet-name>ReadCookie</servlet-name>
+        <servlet-class>ex1.ReadCookie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadCookie</servlet-name>
+        <url-pattern>/ReadCookie</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet 3 : VisitCounter -->
+    <servlet>
+        <servlet-name>VisitCounter</servlet-name>
+        <servlet-class>ex1.VisitCounter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VisitCounter</servlet-name>
+        <url-pattern>/VisitCounter</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet 4 : ShowSession -->
+    <servlet>
+        <servlet-name>ShowSession</servlet-name>
+        <servlet-class>ex1.ShowSession</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowSession</servlet-name>
+        <url-pattern>/ShowSession</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet 5 : ListItems -->
+    <servlet>
+        <servlet-name>ListItems</servlet-name>
+        <servlet-class>ex1.ListItems</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListItems</servlet-name>
+        <url-pattern>/ListItems</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet 6 : LoginServlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>ex1.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Page d'accueil -->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+    
+    <listener>
+    <listener-class>ex1.ApplicationListener</listener-class>
+    </listener>
 
 </web-app>

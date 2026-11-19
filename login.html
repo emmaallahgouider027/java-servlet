@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Secure Access</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #10172a, #202b50, #35265f);
+            overflow: hidden;
+        }
+
+        /* Background decoration */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            opacity: 0.25;
+        }
+
+        .circle.one {
+            width: 300px;
+            height: 300px;
+            background: #8b5cf6;
+            top: -100px;
+            left: -80px;
+        }
+
+        .circle.two {
+            width: 250px;
+            height: 250px;
+            background: #38bdf8;
+            bottom: -80px;
+            right: -60px;
+        }
+
+        /* Login card */
+        .login-card {
+            position: relative;
+            z-index: 1;
+            width: 380px;
+            padding: 45px 35px;
+            background: rgba(255, 255, 255, 0.09);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 22px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            color: white;
+            text-align: center;
+            animation: appear 0.7s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #c4c9dc;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 9px;
+            color: #e0e7ff;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input::placeholder {
+            color: #aab1c8;
+        }
+
+        input:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #aab1c8;
+        }
+
+        @media (max-width: 450px) {
+            .login-card {
+                width: 90%;
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+
+    <div class="login-card">
+
+        <div class="icon">🔐</div>
+
+        <h2>Welcome Back</h2>
+
+        <p class="subtitle">
+            Please enter your username to continue
+        </p>
+
+        <form action="LoginServlet" method="POST">
+
+            <div class="input-group">
+                <label for="username">Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                    autocomplete="username">
+            </div>
+
+            <button type="submit">
+                Sign In →
+            </button>
+
+        </form>
+
+        <div class="footer">
+            Secure Access • LAB1 Application
+        </div>
+
+    </div>
+
+</body>
+</html>
