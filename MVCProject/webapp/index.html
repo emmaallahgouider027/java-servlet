@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC - Person Information</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff8f5, #fce7f3, #f3e8ff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 550px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(167, 108, 145, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #874d70;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .header p {
+            color: #9b8296;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #594052;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ead5e4;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            background-color: #fffafc;
+        }
+
+        input:focus {
+            border-color: #be789b;
+            box-shadow: 0 0 5px rgba(190, 120, 155, 0.2);
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 25px;
+            padding: 10px 0;
+        }
+
+        .gender-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            accent-color: #be789b;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #be789b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #a76c91;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #b39aaf;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Person Information</h1>
+        <p>Please complete the form below</p>
+    </div>
+
+    <form action="Controller" method="POST">
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName"
+                   name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName"
+                   name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birthDay">Birth Day</label>
+            <input type="date" id="birthDay"
+                   name="birthDay" required>
+        </div>
+
+        <div class="form-group">
+            <label>Sex</label>
+
+            <div class="gender-options">
+                <label>
+                    <input type="radio" name="sex"
+                           value="Male" required>
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="sex"
+                           value="Female">
+                    Female
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Submit Information</button>
+
+    </form>
+
+    <div class="footer">
+        MVC Architecture — Person Information
+    </div>
+
+</div>
+
+</body>
+</html>
